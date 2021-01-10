@@ -2,6 +2,11 @@
 
 ## Usage
 
+```
+    python i2c4lcd.py -m <message> -l <line number> -a <text align (l|c|r)> -c <clear current display> -f <flash backlight>
+
+```
+
 ### Simple Single String
 ```
 python i2c4lcd.py -m "Hello World" -l 2 -a c
