@@ -1,6 +1,25 @@
 # i2c4lcd
 i2c4lcd allows you to easily control HD44780 compatible LCDs via port expander modules with the PCF8574 IC.
-This is primarily designed for Raspberry Pi, and you will need to have installed smbus which can be found [here](https://pypi.org/project/smbus2/).
+This is primarily designed for Raspberry Pi. You will need to have installed [smbus](https://pypi.org/project/smbus2/) and i2c-tools.
+
+## Pi Setup
+Using this for the Pi, you will need to enable automatic loading of I2C Kernal module. There are plenty of tutorials out there on how to do this.
+
+Make the following connections from the Pi your port expander module:
+GND   -- GND
+5V    -- VCC
+GPIO2 -- SDA
+GPIO3 -- SCL
+
+Edit the Pi's /etc/modules file with:
+```
+sudo nano /etc/modules
+```
+and add the following lines, if they've not already been added (this will enable these modules at boot):
+```
+i2c-bcm2708
+i2c-dev
+```
 
 ## Usage
 
@@ -64,6 +83,24 @@ You can also override whether the backlight should be on or off by default in th
 ```python
 BACKLIGHT_DEFAULT_STATE = True
 ```
+
+
+## Issues You May Face
+You may run into a runtime error, this could be due to a memory address mismatch. Ensure your connection is proper and if the issue persists, run the following command to probe for devices.
+```
+sudo i2cdetect 0
+```
+or 
+```
+sudo i2cdetect 1
+```
+depending on your Pi version. 
+
+Running this will immediately scan i2c bus 0 or 1 and return which memory address the device is located at. Update the user settings field as follows:
+```python
+I2C_ADDRESS = 0x27 # i2c device address (other typical address would be 0x3f)
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
