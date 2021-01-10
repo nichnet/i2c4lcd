@@ -127,7 +127,6 @@ def get_backlight_bit(state):
 def get_line_address(line):
     #clamp the line number provided to > 0 < max lines
     line = max(1, min(line, get_max_lines()))
-
     #now get the line address from the dictionary.
     return LINE_MEMORY_ADDRESSES[str(line)]
 
