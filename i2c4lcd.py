@@ -83,7 +83,7 @@ def show_message(message, line):
     set_lcd_byte(line, MODE_CMD)
 
     for i in range(DISPLAY_WIDTH):
-        lcd_byte(ord(message[i]), MODE_CHR)
+        set_lcd_byte(ord(message[i]), MODE_CHR)
 
 
 def format_message(message, align):
@@ -97,7 +97,7 @@ def format_message(message, align):
 
 
 def clear_display():
-    lcd_byte(0x01, MODE_CMD)
+    set_lcd_byte(0x01, MODE_CMD)
 
 
 def get_max_lines():
@@ -146,7 +146,7 @@ def set_lcd_byte(bits, mode):
 
 
 def lcd_toggle(bits):
-    # toggle enable 
+    # toggle enable
     time.sleep(E_DELAY)
     bus.write_byte(I2C_ADDRESS, (bits | ENABLE))
     time.sleep(E_PULSE)
