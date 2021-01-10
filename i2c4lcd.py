@@ -165,7 +165,7 @@ def init_display():
 
 
 def show_help_and_exit():
-    print 'i2clcdcontrol.py -m <message> -l <line number> -a <text align (l|c|r)> -c <clear current display> -f <flash backlight>'
+    print 'i2c4lcd.py -m <message> -l <line number> -a <text align (l|c|r)> -c <clear current display> -f <flash backlight>'
     exit(2)
 
 
