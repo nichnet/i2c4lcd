@@ -5,4 +5,4 @@
 ```
 python i2c4lcd.py -m "Hello World" -l 2 -a c
 ```
-![](/images/print_alignment.gif)
+![](/images/print_single_clear.gif)
