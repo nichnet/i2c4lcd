@@ -51,12 +51,12 @@ ENABLE = 0b00000100 # Enable bit
 
 
 def show_single_message(message, line, align):
-        #format the message
-        message = format_message(message, align)
-        #get line number mem address
-        line_address = get_line_address(line)
-        #show message on the display
-        show_message(message, line_address)
+    #format the message
+    message = format_message(message, align)
+    #get line number mem address
+    line_address = get_line_address(line)
+    #show message on the display
+    show_message(message, line_address)
 
 
 def show_multiple_message(message, align):
@@ -80,10 +80,10 @@ def show_multiple_message(message, align):
 
 
 def show_message(message, line):
-  lcd_byte(line, MODE_CMD)
+    set_lcd_byte(line, MODE_CMD)
 
-  for i in range(DISPLAY_WIDTH):
-    lcd_byte(ord(message[i]), MODE_CHR)
+    for i in range(DISPLAY_WIDTH):
+        lcd_byte(ord(message[i]), MODE_CHR)
 
 
 def format_message(message, align):
@@ -132,36 +132,36 @@ def get_line_address(line):
     return LINE_MEMORY_ADDRESSES[str(line)]
 
 
-def lcd_byte(bits, mode):
+def set_lcd_byte(bits, mode):
     bits_high = mode | (bits & 0xF0) | get_backlight_bit(BACKLIGHT_DEFAULT_STATE)
     bits_low = mode | ((bits<<4) & 0xF0) | get_backlight_bit(BACKLIGHT_DEFAULT_STATE)
 
     # high
     bus.write_byte(I2C_ADDRESS, bits_high)
-    lcd_toggle_enable(bits_high)
+    lcd_toggle(bits_high)
 
     # low
     bus.write_byte(I2C_ADDRESS, bits_low)
-    lcd_toggle_enable(bits_low)
+    lcd_toggle(bits_low)
 
 
-def lcd_toggle_enable(bits):
-    # Toggle enable
-    sleep(E_DELAY)
+def lcd_toggle(bits):
+    # toggle enable
+    time.sleep(E_DELAY)
     bus.write_byte(I2C_ADDRESS, (bits | ENABLE))
-    sleep(E_PULSE)
+    time.sleep(E_PULSE)
     bus.write_byte(I2C_ADDRESS,(bits & ~ENABLE))
-    sleep(E_DELAY)
+    time.sleep(E_DELAY)
 
 def init_display():
-    # Initialise display
-    lcd_byte(0x33, MODE_CMD) # 110011 Initialise
-    lcd_byte(0x32, MODE_CMD) # 110010 Initialise
-    lcd_byte(0x06, MODE_CMD) # 000110 Cursor move direction
-    lcd_byte(0x0C, MODE_CMD) # 001100 Display On,Cursor Off, Blink Off
-    lcd_byte(0x28, MODE_CMD) # 101000 Data length, number of lines, font size
+    # initialise display
+    set_lcd_byte(0x33, MODE_CMD) # 110011 Initialise
+    set_lcd_byte(0x32, MODE_CMD) # 110010 Initialise
+    set_lcd_byte(0x06, MODE_CMD) # 000110 Cursor move direction
+    set_lcd_byte(0x0C, MODE_CMD) # 001100 Display On,Cursor Off, Blink Off
+    set_lcd_byte(0x28, MODE_CMD) # 101000 Data length, number of lines, font size
     clear_display()
-    sleep(E_DELAY)
+    time.sleep(E_DELAY)
 
 
 def show_help_and_exit():
