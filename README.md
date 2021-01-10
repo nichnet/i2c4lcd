@@ -1,8 +1,8 @@
 # i2c4lcd
 i2c4lcd allows you to easily control HD44780 compatible LCDs via port expander modules with the PCF8574 IC.
 This is primarily designed for Raspberry Pi. You will need to have installed [smbus](https://pypi.org/project/smbus2/) and i2c-tools.
- 
- 
+<br/>
+<br/>
 ## Pi Setup
 Using this for the Pi, you will need to enable automatic loading of I2C Kernal module. There are plenty of tutorials out there on how to do this.
 
@@ -21,14 +21,14 @@ and add the following lines, if they've not already been added (this will enable
 i2c-bcm2708
 i2c-dev
 ```
- 
- 
+<br/>
+<br/>
 ## Usage
 
 ```
 python i2c4lcd.py -m <message> -l <line number> -a <text align (l|c|r)> -c <clear current display> -f <flash backlight>
 ```
- 
+<br/>
 ### Simple Single String
 ```
 python i2c4lcd.py -m "Hello World" -l 2 -a c
@@ -45,7 +45,7 @@ CLEAR_DISPLAY_DEFAULT = True
 python i2c4lcd.py -m '"Hello World!" -l 3 -a c
 ```
 ![](/images/print_dontclear.gif)
- 
+<br/>
 ### Text Alignment
 
 The text alignment can be set. If no argument is provided, the text will be left aligned by default.
@@ -56,14 +56,14 @@ Below is an example calling the script with center alignment:
 python i2c4lcd.py -m "Hello World" -l 2 -a c
 ```
 ![](/images/print_alignment.gif)
- 
+<br/>
 ### Multi-line Input
 
 ```
 python i2c4lcd.py -m '["Hello World!", "How are you?"]' -c
 ```
 ![](/images/print_multiple.gif)
- 
+<br/>
 ### Display Flashing
 
 When writing to the display, the display can be instructed to flash to prompt/notify the user. Flash speed and count can be overwritten in the user settings field:
@@ -81,8 +81,8 @@ You can also override whether the backlight should be on or off by default in th
 ```python
 BACKLIGHT_DEFAULT_STATE = True
 ```
- 
- 
+<br/>
+<br/>
 ## Issues You May Face
 You may run into a runtime error, this could be due to a memory address mismatch. Ensure your connection is proper and if the issue persists, run the following command to probe for devices.
 ```
@@ -98,14 +98,14 @@ Running this will immediately scan i2c bus 0 or 1 and return which memory addres
 ```python
 I2C_ADDRESS = 0x27 # i2c device address (other typical address would be 0x3f)
 ```
- 
- 
+<br/>
+<br/>
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
- 
- 
+<br/>
+<br/>
 ## License
 [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/)
 
