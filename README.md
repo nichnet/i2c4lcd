@@ -1,4 +1,4 @@
-# i2c4lcd
+# i2c4lcd - Controller for HD44780 Compatible LCDs
 i2c4lcd allows you to easily control HD44780 compatible LCDs via port expander modules with the PCF8574 IC.
 This is primarily designed for Raspberry Pi. You will need to have installed python-smbus and i2c-tools.
 <br/>
