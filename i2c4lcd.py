@@ -153,16 +153,6 @@ def lcd_toggle(bits):
     bus.write_byte(I2C_ADDRESS,(bits & ~ENABLE))
     time.sleep(E_DELAY)
 
-def init_display():
-    # initialise display
-    set_lcd_byte(0x33, MODE_CMD) # 110011 Initialise
-    set_lcd_byte(0x32, MODE_CMD) # 110010 Initialise
-    set_lcd_byte(0x06, MODE_CMD) # 000110 Cursor move direction
-    set_lcd_byte(0x0C, MODE_CMD) # 001100 Display On,Cursor Off, Blink Off
-    set_lcd_byte(0x28, MODE_CMD) # 101000 Data length, number of lines, font size
-    clear_display()
-    time.sleep(E_DELAY)
-
 
 def show_help_and_exit():
     print 'i2c4lcd.py -m <message> -l <line number> -a <text align (l|c|r)> -c <clear current display> -f <flash backlight>'
@@ -227,5 +217,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    init_display()
     main(sys.argv[1:])
