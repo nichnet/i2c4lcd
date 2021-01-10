@@ -2,7 +2,7 @@
 
 ## Usage
 
-
+### Simple Single String
 ```
 python i2c4lcd.py -m "Hello World" -l 2 -a c
 ```
