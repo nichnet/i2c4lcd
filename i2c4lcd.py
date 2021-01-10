@@ -171,6 +171,11 @@ def main(argv):
     except getopt.GetoptError:
         show_help_and_exit()
 
+    # just clear display and exit if no arguments are provided.
+    if len(opts) == 0:
+        clear_display()
+        exit(0)
+
     for opt, arg in opts:
         if opt == '-h':
             show_help_and_exit()
