@@ -18,7 +18,7 @@ python i2c4lcd.py -m "Hello World" -l 2 -a c
 ![](/images/print_single_clear.gif)
 
 
-The display will be appended to without using the clear argument by default. This can be overwritten by setting the default in the user settings field.
+The display will be appended to without using the clear argument by default. This can be overwritten by setting the default in the user settings field:
 ```python
 CLEAR_DISPLAY_DEFAULT = True
 ```
@@ -33,15 +33,11 @@ python i2c4lcd.py -m '"Hello World!" -l 3 -a c
 ### Text Alignment
 
 The text alignment can be set. If no argument is provided, the text will be left aligned by default.
+You can set the alignment to "l" for left, "c" for center, and "r" for right alignment.
 
-```
-python i2c4lcd.py -m "Hello World" -l 2 -a l
-```
+Below is an example calling the script with center alignment:
 ```
 python i2c4lcd.py -m "Hello World" -l 2 -a c
-```
-```
-python i2c4lcd.py -m "Hello World" -l 2 -a r
 ```
 ![](/images/print_alignment.gif)
 
@@ -56,8 +52,7 @@ python i2c4lcd.py -m '["Hello World!", "How are you?"]' -c
 
 ### Display Flashing
 
-When writing to the display, the display can be instructed to flash to prompt/notify the user. Flash speed and count can be overwritten in the user settings field.
-
+When writing to the display, the display can be instructed to flash to prompt/notify the user. Flash speed and count can be overwritten in the user settings field:
 ```python
 BACKLIGHT_FLASH_COUNT = 3
 BACKLIGHT_FLASH_SPEED = 0.25 # 25ms
@@ -68,6 +63,10 @@ python i2c4lcd.py -m "Hello World!" -l 2 -a c -f
 ```
 ![](/images/print_flash.gif)
 
+You can also override whether the backlight should be on or off by default in the user settings field. This is enabled by default:
+```python
+BACKLIGHT_DEFAULT_STATE = True
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
