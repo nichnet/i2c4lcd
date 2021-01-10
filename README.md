@@ -60,3 +60,12 @@ python i2c4lcd.py -m "Hello World!" -l 2 -a c -f
 ![](/images/print_flash.gif)
 
 
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
