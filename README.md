@@ -9,10 +9,11 @@ python i2c4lcd.py -m "Hello World" -l 2 -a c
 ![](/images/print_single_clear.gif)
 
 
-The display will be appended to by default without using the clear argument. This can be overwritten by setting
+The display will be appended to without using the clear argument by default. This can be overwritten by setting the default in the user settings field.
 ```python
 CLEAR_DISPLAY_DEFAULT = True
 ```
+
 
 ```
 python i2c4lcd.py -m '"Hello World!" -l 3 -a c
@@ -21,6 +22,8 @@ python i2c4lcd.py -m '"Hello World!" -l 3 -a c
 
 
 ### Text Alignment
+
+The text alignment can be set. If no argument is provided, the text will be left aligned by default.
 
 ```
 python i2c4lcd.py -m "Hello World" -l 2 -a l
@@ -43,6 +46,13 @@ python i2c4lcd.py -m '["Hello World!", "How are you?"]' -c
 
 
 ### Display Flashing
+
+When writing to the display, the display can be instructed to flash to prompt/notify the user. Flash speed and count can be overwritten in the user settings field.
+
+```python
+BACKLIGHT_FLASH_COUNT = 3
+BACKLIGHT_FLASH_SPEED = 0.25 # 25ms
+```
 
 ```
 python i2c4lcd.py -m "Hello World!" -l 2 -a c -f
