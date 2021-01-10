@@ -10,7 +10,7 @@ python i2c4lcd.py -m "Hello World" -l 2 -a c
 
 
 The display will be appended to by default without using the clear argument. This can be overwritten by setting
-```
+```python
 CLEAR_DISPLAY_DEFAULT = True
 ```
 
