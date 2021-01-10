@@ -1,10 +1,12 @@
 # i2c4lcd
 i2c4lcd allows you to easily control HD44780 compatible LCDs via port expander modules with the PCF8574 IC.
-This is primarily designed for Raspberry Pi. You will need to have installed [smbus](https://pypi.org/project/smbus2/) and i2c-tools.
+This is primarily designed for Raspberry Pi. You will need to have installed python-smbus and i2c-tools.
 <br/>
 <br/>
 
-## Pi Setup
+## Getting Started
+
+### Pi Setup
 Using this for the Pi, you will need to enable automatic loading of I2C Kernal module. There are plenty of tutorials out there on how to do this.
 
 Make the following connections from the Pi your port expander module:
@@ -24,6 +26,20 @@ i2c-dev
 ```
 <br/>
 <br/>
+
+### Instsallation
+As mentioned you will need to install smbus and i2c-tools:
+```bash
+sudo apt-get install python-smbus
+sudo apt-get install i2c-tools
+```
+
+
+Clone the repository:
+```bash
+git clone https://github.com/nichnet/i2c4lcd.git
+```
+
 
 ## Usage
 
