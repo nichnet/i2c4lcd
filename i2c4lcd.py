@@ -217,9 +217,9 @@ def main(argv):
 
     #show message
     if len(message) > 1:
-        show_single_message(message, align)
+        show_multiple_message(message, align)
     else:
-        show_multiple_message(message[0], align)
+        show_single_message(message[0], line, align)
 
     #flash the display if necessary
     if flash == True:
