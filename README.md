@@ -10,10 +10,12 @@ This is primarily designed for Raspberry Pi. You will need to have installed pyt
 Using this for the Pi, you will need to enable automatic loading of I2C Kernal module. There are plenty of tutorials out there on how to do this.
 
 Make the following connections from the Pi your port expander module:
-GND   -- GND
-5V    -- VCC
-GPIO2 -- SDA
+GND   -- GND<br/>
+5V    -- VCC<br/>
+GPIO2 -- SDA<br/>
 GPIO3 -- SCL
+<br/>
+
 
 Edit the Pi's /etc/modules file with:
 ```
