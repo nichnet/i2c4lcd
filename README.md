@@ -25,7 +25,6 @@ i2c-bcm2708
 i2c-dev
 ```
 <br/>
-<br/>
 
 ### Instsallation
 As mentioned you will need to install smbus and i2c-tools:
@@ -39,7 +38,8 @@ Clone the repository:
 ```bash
 git clone https://github.com/nichnet/i2c4lcd.git
 ```
-
+<br/>
+<br/>
 
 ## Usage
 
