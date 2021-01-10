@@ -146,7 +146,7 @@ def set_lcd_byte(bits, mode):
 
 
 def lcd_toggle(bits):
-    # toggle enable
+    # toggle enable 
     time.sleep(E_DELAY)
     bus.write_byte(I2C_ADDRESS, (bits | ENABLE))
     time.sleep(E_PULSE)
