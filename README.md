@@ -3,7 +3,7 @@
 ## About
 
 i2c4lcd is a simple Python script to easily control HD44780 compatible LCDs via modules with the PCF8574 IC.
-This is primarily designed for Raspberry Pi, and you will need to have installed smbus which can be found [here]https://pypi.org/project/smbus2/
+This is primarily designed for Raspberry Pi, and you will need to have installed smbus which can be found [here](https://pypi.org/project/smbus2/).
 
 ## Usage
 
