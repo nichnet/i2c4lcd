@@ -4,6 +4,11 @@ This is primarily designed for Raspberry Pi. You will need to have installed pyt
 <br/>
 <br/>
 
+[!](https://img.shields.io/badge/i2c4lcd-passing-green.svg)](https://shields.io/)
+[!](https://img.shields.io/github/issues/nichnet/i2c4lcd)
+[!](https://img.shields.io/github/stars/nichnet/i2c4lcd)
+[!](/github/pipenv/locked/python-version/:user/:repo)
+
 ## Getting Started
 
 ### Pi Setup
