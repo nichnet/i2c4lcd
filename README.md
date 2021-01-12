@@ -4,10 +4,10 @@ This is primarily designed for Raspberry Pi. You will need to have installed pyt
 <br/>
 <br/>
 
-[![](https://img.shields.io/badge/i2c4lcd-passing-success.svg)(https://github.com/nichnet/i2c4lcd)]
-[![](https://img.shields.io/github/issues/nichnet/i2c4lcd)(https://github.com/nichnet/i2c4lcd/issues)]
-[![](https://img.shields.io/github/stars/nichnet/i2c4lcd)(https://github.com/nichnet/i2c4lcd/stargazers)]
-[![](https://img.shields.io/badge/python-v3.7-blue.svg)(https://github.com/python/)]
+[![](https://img.shields.io/badge/i2c4lcd-passing-success.svg)](https://github.com/nichnet/i2c4lcd)
+[![](https://img.shields.io/github/issues/nichnet/i2c4lcd)](https://github.com/nichnet/i2c4lcd/issues)
+[![](https://img.shields.io/github/stars/nichnet/i2c4lcd)](https://github.com/nichnet/i2c4lcd/stargazers)
+[![](https://img.shields.io/badge/python-v3.7-blue.svg)](https://github.com/python/)
 ## Getting Started
 
 ### Pi Setup
