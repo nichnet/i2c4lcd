@@ -7,7 +7,7 @@ This is primarily designed for Raspberry Pi. You will need to have installed pyt
 [![](https://img.shields.io/badge/i2c4lcd-passing-green.svg)]
 [![](https://img.shields.io/github/issues/nichnet/i2c4lcd)]
 [![](https://img.shields.io/github/stars/nichnet/i2c4lcd)]
-[![](/github/pipenv/locked/python-version/:user/:repo)]
+[![](https://img.shields.io/badge/python-v3.7-blue.svg)]
 
 ## Getting Started
 
