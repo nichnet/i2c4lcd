@@ -126,6 +126,11 @@ I2C_ADDRESS = 0x27 # i2c device address (other typical address would be 0x3f)
 <br/>
 <br/>
 
+## Extras
+To interface with node.js, click [here](https://gist.github.com/nichnet/f7d64f01e9df4befce0b83a83fd92d18)
+<br/>
+<br/>
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
