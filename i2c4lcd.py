@@ -34,6 +34,13 @@ BACKLIGHT_FLASH_SPEED = 0.25 # 25ms delay between flash.
 
 # ---------- End of settings ----------
 
+# Initialization commands to be ran when starting the display
+INIT_SEQ = [
+    0x33, # initialize 110011
+    0x32, # initialize 110010
+    0x06, # set cursor direction move 000110
+    0x0C  # cursor off & blink off 101000
+]
 
 # Mode constants
 MODE_CHR = 1 # Send data mode
@@ -80,10 +87,10 @@ def show_multiple_message(message, align):
 
 
 def show_message(message, line):
-    set_lcd_byte(line, MODE_CMD)
+    set_display_byte(line, MODE_CMD)
 
     for i in range(DISPLAY_WIDTH):
-        set_lcd_byte(ord(message[i]), MODE_CHR)
+        set_display_byte(ord(message[i]), MODE_CHR)
 
 
 def format_message(message, align):
@@ -97,7 +104,7 @@ def format_message(message, align):
 
 
 def clear_display():
-    set_lcd_byte(0x01, MODE_CMD)
+    set_display_byte(0x01, MODE_CMD)
 
 
 def get_max_lines():
@@ -131,7 +138,13 @@ def get_line_address(line):
     return LINE_MEMORY_ADDRESSES[str(line)]
 
 
-def set_lcd_byte(bits, mode):
+def init():
+    #send initialization commands to display
+    for x in range(len(INIT_SEQ)):
+        set_display_byte(INIT_SEQ[x], MODE_CMD)
+
+
+def set_display_byte(bits, mode):
     bits_high = mode | (bits & 0xF0) | get_backlight_bit(BACKLIGHT_DEFAULT_STATE)
     bits_low = mode | ((bits<<4) & 0xF0) | get_backlight_bit(BACKLIGHT_DEFAULT_STATE)
 
@@ -221,4 +234,5 @@ def main(argv):
 
 
 if __name__ == '__main__':
+    init()
     main(sys.argv[1:])
