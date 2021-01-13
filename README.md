@@ -4,6 +4,10 @@ This is primarily designed for Raspberry Pi. You will need to have installed pyt
 <br/>
 <br/>
 
+[![](https://img.shields.io/badge/i2c4lcd-passing-success.svg)](https://github.com/nichnet/i2c4lcd)
+[![](https://img.shields.io/github/issues/nichnet/i2c4lcd)](https://github.com/nichnet/i2c4lcd/issues)
+[![](https://img.shields.io/github/stars/nichnet/i2c4lcd)](https://github.com/nichnet/i2c4lcd/stargazers)
+[![](https://img.shields.io/badge/python-v3.7-blue.svg)](https://github.com/python/)
 ## Getting Started
 
 ### Pi Setup
@@ -123,6 +127,11 @@ Running this will immediately scan i2c bus 0 or 1 and return which memory addres
 ```python
 I2C_ADDRESS = 0x27 # i2c device address (other typical address would be 0x3f)
 ```
+<br/>
+<br/>
+
+## Extras
+To interface with node.js, click [here](https://gist.github.com/nichnet/f7d64f01e9df4befce0b83a83fd92d18)
 <br/>
 <br/>
 
