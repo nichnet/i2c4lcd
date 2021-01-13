@@ -113,7 +113,7 @@ BACKLIGHT_DEFAULT_STATE = True
 <br/>
 
 ## Issues You May Face
-You may run into a runtime error, this could be due to a memory address mismatch. Ensure your connection is proper and if the issue persists, run the following command to probe for devices.
+You may run into a runtime error, this could be due to a memory address mismatch. Ensure your connection is proper and if the issue persists, run the following command to probe for devices:
 ```
 sudo i2cdetect 0
 ```
@@ -131,7 +131,7 @@ I2C_ADDRESS = 0x27 # i2c device address (other typical address would be 0x3f)
 <br/>
 
 ## Extras
-To interface with node.js, click [here](https://gist.github.com/nichnet/f7d64f01e9df4befce0b83a83fd92d18)
+To interface with node.js, click [here](https://gist.github.com/nichnet/89b17806d5b35f2e07af18545d9f870c)
 <br/>
 <br/>
 
