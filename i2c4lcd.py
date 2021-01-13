@@ -7,7 +7,7 @@ import getopt
 
 #  ---------- User Settings ----------
 
-I2C_ADDRESS = 0x27 # i2c device address (in change of error, update to 0x3f address)
+I2C_ADDRESS = 0x27 # i2c device address (in case of error, update to 0x3f address)
 
 #Open i2c interface
 #bus = smbus.SMBus(0) # Raspberry Pi Revision 1 = 0
